@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { AuthKitProvider } from "@workos-inc/authkit-nextjs";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +32,7 @@ export default function RootLayout({
       >
         <main className="container max-w-4xl mx-auto py-4 px-6">
           <Header/>
-          {children} 
+          <AuthKitProvider>{children} </AuthKitProvider>
           <Footer/>
         </main>
       </body>
